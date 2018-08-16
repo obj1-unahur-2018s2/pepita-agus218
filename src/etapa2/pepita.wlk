@@ -5,13 +5,14 @@ import comidas.*
  */
 object pepita {
 	var energia = 0
+	method energiaInicial(joules) { energia = joules }
 	method energia() { return energia }
 	method comer(cosa, gramos) { energia += cosa.energiaPorGramo() * gramos }
 	method volar(kms) { energia -= kms + 10 }
 	
 	// metodos nuevos
-	method estaDebil() { return true }  // implementar
-	method estaFeliz() { return true }  // implementar
+	method estaDebil() { return energia>50 }  // implementar
+	method estaFeliz() { return energia>500 and energia<1000 }  // implementar //reemplace true x energia
 	
 	method cuantoQuiereVolar() { 
 		var cuanto = self.energia() / 5
