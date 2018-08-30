@@ -1,0 +1,24 @@
+import masAves.*
+import roque.*
+import pepita.*
+import comidas.*
+import susana.*
+
+describe "los entrenadores modifican bien" {
+
+	test "pepita y pepon" {
+		
+		pepita.comer(alpiste, 200)
+        pepon.comer(alpiste, 200)
+        roque.tuPupiloEs(pepita)
+        susana.tuPupiloEs(pepon)
+        roque.entrenar()
+        susana.entrenar()
+
+//verificar que en este punto, la energia de pepita es 1965
+		assert.equals( 1965, pepita.energia() )
+        assert.equals( 589, pepon.energia() )
+	}
+}
+
+//cada test es independiente y arranca de 0
