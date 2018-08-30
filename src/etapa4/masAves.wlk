@@ -21,9 +21,7 @@ object pipa {
 	var kmsRecorridos = 0
 	var gramosIngeridos = 0
 	
-	method energiaInicial() { }
-	method energia() { return 0 }
-	method comer(cuanto) { gramosIngeridos += cuanto }  
+	method comer(cosa, cuanto) { gramosIngeridos += cuanto }  
 	method volar(kms) { kmsRecorridos += kms } 
 	
 	/*
@@ -31,4 +29,12 @@ object pipa {
 	 */
 	method haceLoQueQuieras() { }   // queda asi
 	// pregunta: ¿por qué es necesario agregar este método, sin código
+	
+	/* respuesta: porque sino, se rompe cuando quiera entrenar a Pipa
+	 *  pipa debe ser polimorfica con las otras aves
+	 */
 }
+
+/* le agrego cosa a comer y haceloquequieras para salvar el polimorfismo(que tenga los mismos parametros) con roque sino el prog se rompe 
+ * pipa tiene que ser polimorfico con las otras aves
+ * */
